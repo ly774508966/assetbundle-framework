@@ -40,6 +40,7 @@ namespace AssetBundles
             if (!File.Exists(streamingManifest))
             {
                 AssetBundleUtility.CopyPlatformAssetBundlesToStreamingAssets();
+                AssetDatabase.Refresh();
             }
             LaunchAssetBundleServer.CheckAndDoRunning();
         }
