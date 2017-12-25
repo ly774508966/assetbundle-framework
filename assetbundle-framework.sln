@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assetbundle-framework.Plugins", "assetbundle-framework.Plugins.csproj", "{F69EA895-4BFB-B6F5-8AA8-DC164D1ED246}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assetbundle-framework", "assetbundle-framework.csproj", "{25E3B03B-E8A5-CF22-D1C2-50AA7D3214F1}"
