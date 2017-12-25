@@ -27,22 +27,19 @@ public class AssetbundleUpdater : MonoBehaviour
         slider = transform.Find("Control - Colored Slider").GetComponent<UISlider>();
         progresslable.gameObject.SetActive(false);
         slider.gameObject.SetActive(false);
-#if UNITY_EDITOR
-        if (AssetBundleConfig.IsEditorMode)
-        {
-            SwitchSence();
-        }
-        else
-        {
-#endif
-            StartCoroutine(CheckUpdate());
-#if UNITY_EDITOR
-        }
-#endif
+        StartCoroutine(CheckUpdate());
     }
 
     IEnumerator CheckUpdate()
     {
+#if UNITY_EDITOR
+        if (AssetBundleConfig.IsEditorMode)
+        {
+            SwitchSence();
+            yield break;
+        }
+#endif
+
         statuslable.text = "正在检测资源更新...";
         yield return CheckIfNeededUpdate();
         if (needDownloadList.Count <= 0)
@@ -64,6 +61,7 @@ public class AssetbundleUpdater : MonoBehaviour
         statuslable.text = "资源更新完成！";
         UnityEngine.Debug.Log("Update finished...");
         yield return UpdateFinish();
+        SwitchSence();
         yield break;
     }
 

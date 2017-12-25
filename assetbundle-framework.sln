@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assetbundle-framework.Plugins", "assetbundle-framework.Plugins.csproj", "{F69EA895-4BFB-B6F5-8AA8-DC164D1ED246}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assetbundle-framework", "assetbundle-framework.csproj", "{25E3B03B-E8A5-CF22-D1C2-50AA7D3214F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assetbundle-framework.Editor.Plugins", "assetbundle-framework.Editor.Plugins.csproj", "{A8A659A1-466B-E5BE-EAEA-E26DF9DDACA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assetbundle-framework.Editor", "assetbundle-framework.Editor.csproj", "{9A0182E2-A78F-8438-C41D-4C2295ED7766}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F69EA895-4BFB-B6F5-8AA8-DC164D1ED246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69EA895-4BFB-B6F5-8AA8-DC164D1ED246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69EA895-4BFB-B6F5-8AA8-DC164D1ED246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69EA895-4BFB-B6F5-8AA8-DC164D1ED246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E3B03B-E8A5-CF22-D1C2-50AA7D3214F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E3B03B-E8A5-CF22-D1C2-50AA7D3214F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E3B03B-E8A5-CF22-D1C2-50AA7D3214F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E3B03B-E8A5-CF22-D1C2-50AA7D3214F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A659A1-466B-E5BE-EAEA-E26DF9DDACA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A659A1-466B-E5BE-EAEA-E26DF9DDACA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A659A1-466B-E5BE-EAEA-E26DF9DDACA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A659A1-466B-E5BE-EAEA-E26DF9DDACA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A0182E2-A78F-8438-C41D-4C2295ED7766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0182E2-A78F-8438-C41D-4C2295ED7766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0182E2-A78F-8438-C41D-4C2295ED7766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0182E2-A78F-8438-C41D-4C2295ED7766}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
