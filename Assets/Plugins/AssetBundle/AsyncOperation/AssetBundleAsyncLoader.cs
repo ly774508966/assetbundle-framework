@@ -95,28 +95,24 @@ namespace AssetBundles
             {
                 if (AssetBundleManager.Instance.IsAssetBundleLoaded(waitingList[i]))
                 {
-                    if (waitingList[i] == assetbundleName)
+                    var curFinished = waitingList[i];
+                    if (curFinished == assetbundleName)
                     {
                         assetbundle = AssetBundleManager.Instance.GetAssetBundleCache(assetbundleName);
                     }
+                    else
+                    {
+                    }
+                    //Debug.Log(curFinished);
+                    //AssetBundleManager.Instance.AddAssetbundleAssetsCache(curFinished);
                     waitingList.RemoveAt(i);
                 }
             }
             // 说明：即使等待队列一开始就是0，也必须让AssetBundleManager跑一次update，它要善后
             isOver = waitingList.Count == 0;
-            if (isOver && assetbundle != null)
+            if (isOver)
             {
-                var allAssetNames = AssetBundleManager.Instance.GetAllAssetNames(assetbundleName);
-                for (int i = 0; i < allAssetNames.Count; i++)
-                {
-                    var assetName = allAssetNames[i];
-                    if (AssetBundleManager.Instance.IsAssetBundleLoaded(assetName))
-                    {
-                        continue;
-                    }
-                    var asset = assetbundle.LoadAsset(assetName);
-                    AssetBundleManager.Instance.AddAssetCache(assetName, asset);
-                }
+                AssetBundleManager.Instance.AddAssetbundleAssetsCache(assetbundleName);
             }
         }
 

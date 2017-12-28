@@ -189,17 +189,32 @@ namespace AssetBundles
             assetCaching[assetName] = asset;
         }
 
+        public void AddAssetbundleAssetsCache(string assetbundleName)
+        {
+            if (!IsAssetBundleLoaded(assetbundleName))
+            {
+                UnityEngine.Debug.LogError("Try to add assets cache from unloaded assetbundle : " + assetbundleName);
+                return;
+            }
+            var curAssetbundle = GetAssetBundleCache(assetbundleName);
+            var allAssetNames = assetsPathMapping.GetAllAssetNames(assetbundleName);
+            for (int i = 0; i < allAssetNames.Count; i++)
+            {
+                var assetName = allAssetNames[i];
+                if (IsAssetLoaded(assetName))
+                {
+                    continue;
+                }
+                var asset = curAssetbundle == null ? null : curAssetbundle.LoadAsset(assetName);
+                AddAssetCache(assetName, asset);
+            }
+        }
+
         public void ClearAssetCache()
         {
             assetCaching.Clear();
         }
-
-
-        public List<string> GetAllAssetNames(string assetbundleName)
-        {
-            return assetsPathMapping.GetAllAssetNames(assetbundleName);
-        }
-
+        
         public ResourceWebRequester GetAssetBundleAsyncCreater(string assetbundleName)
         {
             ResourceWebRequester creater = null;
@@ -407,16 +422,18 @@ namespace AssetBundles
                 creater.Update();
                 if (creater.IsDone())
                 {
+                    UnityEngine.Debug.Log(creater.assetbundleName);
                     prosessingWebRequester.RemoveAt(i);
                     webRequesting.Remove(creater.assetbundleName);
                     if (creater.noCache)
                     {
                         return;
                     }
-                    // 说明：有错误也缓存下来，只不过assetbundle为空
+                    // 说明：有错误也缓存下来，只不过资源为空
                     // 1、避免再次错误加载
-                    // 2、如果不存下来ab加载器将无法判断什么时候结束
+                    // 2、如果不存下来加载器将无法判断什么时候结束
                     AddAssetBundleCache(creater.assetbundleName, creater.assetbundle);
+                    //AddAssetbundleAssetsCache(creater.assetbundleName);
                     UnloadAssetBundle(creater.assetbundleName);
                     creater.Dispose();
                 }

@@ -31,7 +31,7 @@ public class GameLaunch : MonoBehaviour
         {
             UnityEngine.Debug.LogError("LoadAssetAsync luachPrefabPath err : " + luachPrefabPath);
         }
-        
+
         yield break;
 	}
 }
